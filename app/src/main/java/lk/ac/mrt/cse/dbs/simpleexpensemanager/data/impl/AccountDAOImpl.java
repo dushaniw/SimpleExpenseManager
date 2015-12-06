@@ -134,9 +134,9 @@ public class AccountDAOImpl implements AccountDAO {
         }
         values.put(DatabaseHelper.COLUMN_BANKNAME,account.getBankName());
         values.put(DatabaseHelper.COLUMN_ACCHOLDER,account.getAccountHolderName());
-        values.put(DatabaseHelper.COLUMN_BALANCE,account.getBalance());
+        values.put(DatabaseHelper.COLUMN_BALANCE,String.valueOf(account.getBalance()));
 
-        database.update(DatabaseHelper.TABLE_ACCOUNT,values,DatabaseHelper.COLUMN_ACCOUNTNO+"="+accountNo,null);
+        database.update(DatabaseHelper.TABLE_ACCOUNT,values,DatabaseHelper.COLUMN_ACCOUNTNO+"=?",new String[] {accountNo});
     }
 
 

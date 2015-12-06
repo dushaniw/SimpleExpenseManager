@@ -47,7 +47,7 @@ public class TransactionDAOImpl implements TransactionDAO {
         values.put(DatabaseHelper.COLUMN_EXPENSETYPE,expenseType.name());
         values.put(DatabaseHelper.COLUMN_AMOUNT, String.valueOf(amount));
         try {
-            database.insert(DatabaseHelper.TABLE_ACCOUNT, null, values);
+            database.insert(DatabaseHelper.TABLE_TRANSACTION, null, values);
         }
         catch (SQLiteConstraintException ex) {
             Log.w("Database", ex.getMessage());

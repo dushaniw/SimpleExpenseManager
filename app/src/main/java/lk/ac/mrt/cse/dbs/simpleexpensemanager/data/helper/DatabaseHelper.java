@@ -16,7 +16,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     // Table Names
     public  static final String TABLE_ACCOUNT ="account";
-    public  static final String TABLE_TRANSACTION ="transaction";
+    public  static final String TABLE_TRANSACTION ="_transaction";
 
     //account Column Names
     public static final String COLUMN_ACCOUNTNO = "accountNo";
@@ -36,7 +36,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + COLUMN_BALANCE + " REAL" + ")";
 
     private static final String CREATE_TABLE_TRANSACTION = "CREATE TABLE " + TABLE_TRANSACTION
-            + "(" + COLUMN_DATE + " TEXT NOT NUL," + COLUMN_ACCNO+ " TEXT NOT NULL,"+ COLUMN_EXPENSETYPE + " TEXT NOT NULL,"
+            + "(" + COLUMN_DATE + " TEXT NOT NULL," + COLUMN_ACCNO+ " TEXT NOT NULL,"+ COLUMN_EXPENSETYPE + " TEXT NOT NULL,"
             + COLUMN_AMOUNT + " REAL" + ")";
 
     public DatabaseHelper(Context context) {
